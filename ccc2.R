@@ -1,0 +1,15 @@
+shell("cls")
+setwd("c://data")
+age=c(1,2,3,4,5)
+marks=c(10,20,30,40,50)
+plot(age,marks,type="b",col=c("red"))
+lines(age,marks,type="s",col=c("green"))
+apurv=data.frame(age=c(1,2,3,4,5),marks=c(10,20,30,40,50))
+barplot(apurv$age,xlab=apurv$marks,col="yellow")
+points(apurv$age,apurv$marks,type="o",col="blue")
+lines(apurv$age,apurv$marks)
+library(ggplot2)
+ggplot(apurv,aes(age,marks,group=1),)+
+  geom_bar(stat="identity")+
+  geom_line(color="green")+
+  geom_point(color="blue")
